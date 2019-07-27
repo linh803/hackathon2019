@@ -80,8 +80,12 @@
                     printf ("<h2>%s</h2>", $rules['title']);
                     printf ("<p class=\"description\">%s</p>", $rules['description']);
                     printf ("<p class=\"tags\">%s</p>", $rules['tag']);
-                    printf ("<img class=\"arrow\" src=\"./fontawesome-free-5.9.0-web/svgs/solid/arrow-up.svg\" alt=\"up arrow\"><span class=\"votes\">%d</span>", $rules['likes']);
-                    printf ("<img class=\"arrow\" src=\"./fontawesome-free-5.9.0-web/svgs/solid/arrow-down.svg\" alt=\"down arrow\"><span class=\"votes\">%d</span>", $rules['dislikes']);
+                    echo "<svg class='arrow-up'>";
+                    echo file_get_contents("./fontawesome-free-5.9.0-web/svgs/solid/arrow-up.svg");
+                    printf("</svg><span class=\"votes\">%d</span>", $rules['likes']);
+                    echo "<svg class='arrow-down'>";
+                    echo file_get_contents("./fontawesome-free-5.9.0-web/svgs/solid/arrow-down.svg");
+                    printf("</svg><span class=\"votes\">%d</span>", $rules['dislikes']);
                     printf("</div>");
                     printf("</div>");
                     printf("</div>");
@@ -94,6 +98,6 @@
 <!-- Script to change country on change -->
 <script>
 function countryChange(){
- document.getElementById('search').submit();
+    document.getElementById('search').submit();
 }
 </script>

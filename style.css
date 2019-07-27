@@ -26,10 +26,17 @@
     margin-bottom: auto;
 }
 
-.arrow 
+.arrow-up, .arrow-down
 {   
     height: 15px;
     width: 15px;
-    /*display: inline-block;*/
     vertical-align: middle;
+}
+
+.arrow-up:hover path {
+    fill: #00aa00;
+}
+
+.arrow-down:hover path {
+    fill: #ff0000;
 }

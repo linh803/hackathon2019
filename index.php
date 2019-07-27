@@ -13,9 +13,10 @@
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./nav.css">
         <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./index.css">
     </head>
 
-    <body background="./images/home-background.png">
+    <body id="index">
         <nav class="navbar navbar-expand-md justify-content-end">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -36,7 +37,7 @@
             </ul>
         </nav>
 
-        <div class="container">
+        <div id="main" class="container">
             <div class="row">
                 <div class="col">
                     <div class="card custom-card">

@@ -1,0 +1,27 @@
+.heading1 {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 64px;
+}
+
+.form-label {
+    color: #000000;
+}
+
+.custom-card {
+    padding: 40px 10px;
+    border-radius: 15px;
+}
+
+.custom-button {
+    background-color: #62929E;
+    color: #ffffff;
+    border-radius: 25px;
+    border: none;
+    padding: 10px 20px;
+}
+
+.center-content {
+    margin-top: auto;
+    margin-bottom: auto;
+}

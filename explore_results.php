@@ -23,7 +23,7 @@
             print_navbar();
         ?>
 
-        <div class="container">
+        <div id="main" class="container">
             <div class="col-sm-12">
                 <form id='search' class="form-inline" action="./explore_results.php" method="post">
                     <div class="form-group">

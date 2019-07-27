@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Name goes here</title>
+        <title>Explore</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
                                         ?>
                                     </datalist><br>
                                 </div>
-                                
+
                                 <span class="float-right">
                                     <button type="submit" class="btn custom-button">Search</button>
                                 </span>

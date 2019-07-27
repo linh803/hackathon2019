@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Name goes here</title>
+        <title>Explore</title>
         <meta charset="utf-8">
     </head>
 
@@ -26,6 +26,7 @@
 
         <!--TODO: add action page-->
         <form action="" method="post">
+            <!--TODO: submit when the user presses ENTER-->
             <label for="search">SEARCH</label><br>
             <input id="search" type="text" name="search" placeholder="Is it ok to..."><br>
 
@@ -38,8 +39,15 @@
 
             <label for="tags">TAGS</label><br>
             <input id="tags" type="text" name="tags" placeholder="#work, #shop, ..."><br>
-
-            <input type="submit" value="Post">
         </form>
+
+        <!--TODO: print cards-->
+        <div>
+            <h2>Title</h2>
+            <p class="description">Something</p>
+            <p class="tags">#work #behaviour</p>
+            <img src="./icons/up-arrow.png" alt="up arrow"><span class="votes">1.2k</span>
+            <img src="./icons/down-arrow.png" alt="down arrow"><span class="votes">20</span>
+        </div>
     </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Name goes here</title>
+        <title>Contribute</title>
         <meta charset="utf-8">
     </head>
 
@@ -24,11 +24,10 @@
             </li>
         </ul>
 
+        <h1>CONTRIBUTE</h1>
+
         <!--TODO: add action page-->
         <form action="" method="post">
-            <label for="search">SEARCH</label><br>
-            <input id="search" type="text" name="search" placeholder="Is it ok to..."><br>
-
             <label for="location">LOCATION</label><br>
             <input list="location" placeholder="City">
             <datalist id="location">
@@ -38,6 +37,14 @@
 
             <label for="tags">TAGS</label><br>
             <input id="tags" type="text" name="tags" placeholder="#work, #shop, ..."><br>
+
+            <!--TODO: word limit-->
+            <label for="title">TITLE</label><br>
+            <input id="title" type="text" name="title" placeholder="Title" maxlength="20"><br>
+
+            <!--TODO: size + word limit-->
+            <label for="description">DESCRIPTION</label><br>
+            <textarea id="description" name="description" placeholder="Tell us more..." maxlength="250"></textarea><br>
 
             <input type="submit" value="Post">
         </form>

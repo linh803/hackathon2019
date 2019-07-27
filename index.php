@@ -20,7 +20,7 @@
                 <a class="nav-link" href="./rate.html">Rate</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./signup.html">Sign Up</a>
+                <a class="nav-link" href="./signup.html">Sign In</a>
             </li>
         </ul>
 
@@ -32,7 +32,7 @@
             <label for="location">LOCATION</label><br>
             <input list="location" placeholder="City">
             <datalist id="location">
-                <?php 
+                <?php
                     $servername = "localhost";
                     $username = "root";
                     $password = "";
@@ -44,7 +44,7 @@
                     // Check connection
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
-                    } 
+                    }
                     // echo "Connected successfully <br>";
 
                     // Query: mysqli_query($conn, QUERY);

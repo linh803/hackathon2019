@@ -13,10 +13,10 @@
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./nav.css">
         <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./background.css">
     </head>
 
-    <body id="index">
+    <body id="bckgrd" background="./images/home-background.png">
         <nav class="navbar navbar-expand-md justify-content-end">
             <ul class="navbar-nav">
                 <li class="nav-item">

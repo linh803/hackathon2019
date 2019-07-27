@@ -1,0 +1,11 @@
+#bckgrd {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+#main {
+    position: fixed;
+    top: 25%;
+    left: 25%;
+}

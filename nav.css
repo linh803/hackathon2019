@@ -1,0 +1,10 @@
+.navbar {
+    font-family: 'Playfair Display', serif;
+}
+.nav-link {
+    color: #ffffff;
+}
+
+.nav-link:hover {
+    color: #277B90; 
+}

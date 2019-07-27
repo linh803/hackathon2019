@@ -1,18 +1,7 @@
 <!-- Connect to database -->
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password);
-    $db = 'hackathon';
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    mysqli_select_db($conn, $db);
+    include 'db.php';
+    $conn = db_connect();
 
     // Get count for ID for new data
     $sql = "SELECT COUNT(*) FROM etiquette;";

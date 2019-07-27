@@ -22,29 +22,40 @@
     <head>
         <title>Contribute</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./nav.css">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./background.css">
     </head>
 
-    <body>
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link" href="./index.php">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./explore.php">Explore</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./contribute.php">Contribute</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./rate.php">Rate</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./signup.php">Sign In</a>
-            </li>
-        </ul>
+    <body id="bckgrd" background="./images/contribute-background.png">
+        <nav class="navbar navbar-expand-md justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Explore</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./contribute.php">Contribute</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Rate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Sign In</a>
+                </li>
+            </ul>
+        </nav>
 
-        <h1>Thank You!</h1>
-        <a href="./index.php"><button><img src="./images/home-icon.png">Home</button></a>
-        <a href="./contribute.php"><button>Make another post<img src="./images/arrow-icon.png"></button></a>
+        <div id="main" class="container">
+            <div class="col">
+                <h1 class="heading1">Thank You!</h1>
+                <a href="./index.php"><button class="btn custom-button">Home</button></a>
+                <a href="./contribute.php"><button class="btn custom-button">Make another post</button></a>
+            </div>
+        </div>
     </body>
 </html>

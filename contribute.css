@@ -1,0 +1,8 @@
+textarea {
+    resize: none;
+}
+
+#edit {
+    margin: 0px 5px;
+    color: #ffffff;
+}

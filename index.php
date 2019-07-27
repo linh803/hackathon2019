@@ -25,7 +25,7 @@
         </ul>
 
         <!--TODO: add action page-->
-        <form action="" method="post">
+        <form action="./explore_results.php" method="post">
             <label for="search">SEARCH</label><br>
             <input id="search" type="text" name="search" placeholder="Is it ok to..."><br>
 

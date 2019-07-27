@@ -65,10 +65,10 @@
                                     </datalist><br>
                                 </div>
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label class="form-label" for="tags">TAGS</label><br>
                                     <input id="tags"  class="form-control" type="text" name="tags" placeholder="#work, #shop, ..."><br>
-                                </div>
+                                </div> -->
 
 
                                 <span class="float-right">

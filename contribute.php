@@ -50,7 +50,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <form name="contribute" action="./peak.php" method="post" class="needs-validation" novalidate>
+                            <form name="contribute" action="./peek.php" method="post" class="needs-validation" novalidate>
                                 <!-- Retain data when returning from peak.php -->
                                 <div class="form-group">
                                     <label for="location">LOCATION</label><br>

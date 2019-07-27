@@ -1,3 +1,20 @@
+<!-- Connect to database -->
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password);
+    $db = 'hackathon';
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    mysqli_select_db($conn, $db);
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,47 +25,30 @@
     <body>
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="./index.html">Home</a>
+                <a class="nav-link" href="./index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./explore.html">Explore</a>
+                <a class="nav-link" href="./explore.php">Explore</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./contribute.html">Contribute</a>
+                <a class="nav-link" href="./contribute.php">Contribute</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./rate.html">Rate</a>
+                <a class="nav-link" href="./rate.php">Rate</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./signup.html">Sign In</a>
+                <a class="nav-link" href="./signup.php">Sign In</a>
             </li>
         </ul>
 
-        <!--TODO: add action page-->
         <form action="./explore_results.php" method="post">
             <label for="search">SEARCH</label><br>
             <input id="search" type="text" name="search" placeholder="Is it ok to..."><br>
 
             <label for="location">LOCATION</label><br>
-            <input list="location" placeholder="City">
+            <input list="location" name="country" placeholder="Country">
             <datalist id="location">
                 <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password);
-                    $db = 'hackathon';
-
-                    // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
-                    // echo "Connected successfully <br>";
-
-                    // Query: mysqli_query($conn, QUERY);
-                    mysqli_select_db($conn, $db);
                     $sql = 'SELECT * FROM location';
                     $result = mysqli_query($conn, $sql);
 
@@ -57,8 +57,6 @@
                     }
                     mysqli_close($conn);
                 ?>
-                <!-- <option value="City"> -->
-                <!--TODO: print options using js or php-->
             </datalist><br>
 
             <label for="tags">TAGS</label><br>

@@ -25,3 +25,11 @@
     margin-top: auto;
     margin-bottom: auto;
 }
+
+.arrow 
+{   
+    height: 15px;
+    width: 15px;
+    /*display: inline-block;*/
+    vertical-align: middle;
+}

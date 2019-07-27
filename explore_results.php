@@ -38,35 +38,35 @@
             </ul>
         </nav>
 
-        <div class="col-sm-12">
-            <form class="form-inline" action="./explore_results.php" method="post">
-                <div class="form-group">
-                    <i class="fa fa-user icon"></i>
-                    <input class="form-control e-input" id="search" type="text" name="title" placeholder="Is it ok to..."><br>
-                </div>
-
-                <div class="form-group">
-                    <input class="form-control e-input" list="location" name='country' placeholder="Country">
-                    <datalist id="location">
-                        <!-- Retrieve possible countries -->
-                        <?php
-                            $sql = 'SELECT * FROM location';
-                            $result = mysqli_query($conn, $sql);
-
-                            while($country = mysqli_fetch_row($result)) {
-                                printf ("<option value=\"%s\">", $country[1]);
-                            }
-                        ?>
-                    </datalist><br>
-                </div>
-
-                <span class="float-right">
-                    <button type="submit" class="btn custom-button e-button">Search</button>
-                </span>
-            </form>
-        </div>
-
         <div class="container">
+            <div class="col-sm-12">
+                <form id='search' class="form-inline" action="./explore_results.php" method="post">
+                    <div class="form-group">
+                        <input class="form-control e-input" id="search" type="text" name="title" placeholder="Is it ok to..."><br>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control e-input" list="location" name='country' placeholder="Country" onchange="countryChange();">
+                        <datalist id="location">
+                            <!-- Retrieve possible countries -->
+                            <?php
+                                $sql = 'SELECT * FROM location';
+                                $result = mysqli_query($conn, $sql);
+
+                                while($country = mysqli_fetch_row($result)) {
+                                    printf ("<option value=\"%s\">", $country[1]);
+                                }
+                            ?>
+                        </datalist><br>
+                    </div>
+
+                    <span class="float-right">
+                        <button type="submit" class="btn custom-button e-button">Search</button>
+                    </span>
+                    <input type="hidden" name="tags" value="">
+                </form>
+            </div>
+
             <!-- Retrieve card results -->
             <?php
                 $sql = sprintf('SELECT * FROM etiquette JOIN location ON etiquette.location = location.id WHERE title LIKE \'%%%s%%\' AND title LIKE \'%%%s%%\' AND country LIKE \'%%%s%%\'', $_POST['title'], $_POST['tags'], $_POST['country']);
@@ -80,8 +80,8 @@
                     printf ("<h2>%s</h2>", $rules['title']);
                     printf ("<p class=\"description\">%s</p>", $rules['description']);
                     printf ("<p class=\"tags\">%s</p>", $rules['tag']);
-                    printf ("<img src=\"./icons/up-arrow.png\" alt=\"up arrow\"><span class=\"votes\">%d</span>", $rules['likes']);
-                    printf ("<img src=\"./icons/down-arrow.png\" alt=\"down arrow\"><span class=\"votes\">%d</span>", $rules['dislikes']);
+                    printf ("<img class=\"arrow\" src=\"./fontawesome-free-5.9.0-web/svgs/solid/arrow-up.svg\" alt=\"up arrow\"><span class=\"votes\">%d</span>", $rules['likes']);
+                    printf ("<img class=\"arrow\" src=\"./fontawesome-free-5.9.0-web/svgs/solid/arrow-down.svg\" alt=\"down arrow\"><span class=\"votes\">%d</span>", $rules['dislikes']);
                     printf("</div>");
                     printf("</div>");
                     printf("</div>");
@@ -90,3 +90,10 @@
         </div>
     </body>
 </html>
+
+<!-- Script to change country on change -->
+<script>
+function countryChange(){
+ document.getElementById('search').submit();
+}
+</script>

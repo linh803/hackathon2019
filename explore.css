@@ -1,0 +1,24 @@
+#background {
+    background-color: #62929E;
+}
+
+.e-card {
+    margin: 20px 0px;
+}
+
+.custom-e-card {
+    border-radius: 10px;
+}
+
+.e-button {
+    background-color: #F1672B;
+    margin: 0px 5px;
+    font-size: 24px;
+}
+
+.e-input {
+    padding: 10px 20px;
+    margin: 0px 5px;
+    border-radius: 25px;
+    font-size: 24px;
+}

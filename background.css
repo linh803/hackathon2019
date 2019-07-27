@@ -2,10 +2,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    position: relative;
 }
 
 #main {
-    position: fixed;
-    top: 15%;
-    left: 5%;
+    /* position: fixed; */
+    /* top: 15%; */
+    /* left: 5%; */
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
 }

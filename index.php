@@ -32,7 +32,32 @@
             <label for="location">LOCATION</label><br>
             <input list="location" placeholder="City">
             <datalist id="location">
-                <option value="City">
+                <?php 
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+
+                    // Create connection
+                    $conn = new mysqli($servername, $username, $password);
+                    $db = 'hackathon';
+
+                    // Check connection
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    } 
+                    // echo "Connected successfully <br>";
+
+                    // Query: mysqli_query($conn, QUERY);
+                    mysqli_select_db($conn, $db);
+                    $sql = 'SELECT * FROM location';
+                    $result = mysqli_query($conn, $sql);
+
+                    while($country = mysqli_fetch_row($result)) {
+                        printf ("<option value=\"%s\">", $country[1]);
+                    }
+                    mysqli_close($conn);
+                ?>
+                <!-- <option value="City"> -->
                 <!--TODO: print options using js or php-->
             </datalist><br>
 

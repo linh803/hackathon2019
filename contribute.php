@@ -64,7 +64,7 @@
                                     <datalist id="location">
                                         <!-- Retrieve possible countries -->
                                         <?php
-                                            $sql = 'SELECT * FROM location';
+                                            $sql = 'SELECT * FROM location ORDER BY country';
                                             $result = mysqli_query($conn, $sql);
 
                                             while($country = mysqli_fetch_row($result)) {

@@ -50,7 +50,7 @@
                         <datalist id="location">
                             <!-- Retrieve possible countries -->
                             <?php
-                                $sql = 'SELECT * FROM location';
+                                $sql = 'SELECT * FROM location ORDER BY country';
                                 $result = mysqli_query($conn, $sql);
 
                                 while($country = mysqli_fetch_row($result)) {
@@ -69,26 +69,28 @@
 
             <!-- Retrieve card results -->
             <?php
-                $sql = sprintf('SELECT * FROM etiquette JOIN location ON etiquette.location = location.id WHERE title LIKE \'%%%s%%\' AND title LIKE \'%%%s%%\' AND country LIKE \'%%%s%%\'', $_POST['title'], $_POST['tags'], $_POST['country']);
-                $result = mysqli_query($conn, $sql);
+                if(!empty($_POST)) {
+                    $sql = sprintf('SELECT * FROM etiquette JOIN location ON etiquette.location = location.id WHERE title LIKE \'%%%s%%\' AND country LIKE \'%%%s%%\'', $_POST['title'], $_POST['country']);
+                    $result = mysqli_query($conn, $sql);
 
-                while($rules = mysqli_fetch_array($result)) {
-                    printf("<div class=\"col-sm-12 e-card\">");
-                    printf("<div class=\"card custom-e-card\">");
-                    printf("<div class=\"card-body\">");
-                    printf ("<p class=\"country\">%s</p>", $rules['country']);
-                    printf ("<h2>%s</h2>", $rules['title']);
-                    printf ("<p class=\"description\">%s</p>", $rules['description']);
-                    printf ("<p class=\"tags\">%s</p>", $rules['tag']);
-                    echo "<svg class='arrow-up'>";
-                    echo file_get_contents("./fontawesome-free-5.9.0-web/svgs/solid/arrow-up.svg");
-                    printf("</svg><span class=\"votes\">%d</span>", $rules['likes']);
-                    echo "<svg class='arrow-down'>";
-                    echo file_get_contents("./fontawesome-free-5.9.0-web/svgs/solid/arrow-down.svg");
-                    printf("</svg><span class=\"votes\">%d</span>", $rules['dislikes']);
-                    printf("</div>");
-                    printf("</div>");
-                    printf("</div>");
+                    while($rules = mysqli_fetch_array($result)) {
+                        printf("<div class=\"col-sm-12 e-card\">");
+                        printf("<div class=\"card custom-e-card\">");
+                        printf("<div class=\"card-body\">");
+                        printf ("<p class=\"country\">%s</p>", $rules['country']);
+                        printf ("<h2>%s</h2>", $rules['title']);
+                        printf ("<p class=\"description\">%s</p>", $rules['description']);
+                        printf ("<p class=\"tags\">%s</p>", $rules['tag']);
+                        echo "<svg class='arrow-up'>";
+                        echo file_get_contents("./fontawesome-free-5.9.0-web/svgs/solid/arrow-up.svg");
+                        printf("</svg><span class=\"votes\">%d</span>", $rules['likes']);
+                        echo "<svg class='arrow-down'>";
+                        echo file_get_contents("./fontawesome-free-5.9.0-web/svgs/solid/arrow-down.svg");
+                        printf("</svg><span class=\"votes\">%d</span>", $rules['dislikes']);
+                        printf("</div>");
+                        printf("</div>");
+                        printf("</div>");
+                    }
                 }
             ?>
         </div>

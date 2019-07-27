@@ -1,6 +1,7 @@
 <!-- Connect to database -->
 <?php
     include 'db.php';
+    include 'navbar.php';
     $conn = db_connect();
 ?>
 
@@ -14,28 +15,13 @@
         <link rel="stylesheet" href="./nav.css">
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="./background.css">
+        <include
     </head>
 
     <body id="bckgrd" background="./images/home-background.png">
-        <nav class="navbar navbar-expand-md justify-content-end">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="./index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Explore</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./contribute.php">Contribute</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Rate</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Sign In</a>
-                </li>
-            </ul>
-        </nav>
+        <?php
+            print_navbar();
+        ?>
 
         <div id="main" class="container">
             <div class="row">
@@ -64,13 +50,7 @@
                                         ?>
                                     </datalist><br>
                                 </div>
-
-                                <!-- <div class="form-group">
-                                    <label class="form-label" for="tags">TAGS</label><br>
-                                    <input id="tags"  class="form-control" type="text" name="tags" placeholder="#work, #shop, ..."><br>
-                                </div> -->
-
-
+                                
                                 <span class="float-right">
                                     <button type="submit" class="btn custom-button">Search</button>
                                 </span>

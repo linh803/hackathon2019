@@ -1,6 +1,7 @@
 <!-- Connect to database -->
 <?php
     include 'db.php';
+    include 'navbar.php';
     $conn = db_connect();
 ?>
 
@@ -18,25 +19,9 @@
     </head>
 
     <body id="background">
-        <nav class="navbar navbar-expand-md justify-content-end">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="./index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Explore</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./contribute.php">Contribute</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Rate</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Sign In</a>
-                </li>
-            </ul>
-        </nav>
+        <?php
+            print_navbar();
+        ?>
 
         <div class="container">
             <div class="col-sm-12">
@@ -77,16 +62,16 @@
                         printf("<div class=\"col-sm-12 e-card\">");
                         printf("<div class=\"card custom-e-card\">");
                         printf("<div class=\"card-body\">");
-                        printf ("<p class=\"country\">%s</p>", $rules['country']);
+                        printf ("<p style=\"color: #138EAD\">%s</p>", $rules['country']);
                         printf ("<h2>%s</h2>", $rules['title']);
                         printf ("<p class=\"description\">%s</p>", $rules['description']);
-                        printf ("<p class=\"tags\">%s</p>", $rules['tag']);
+                        printf ("<p style=\"color: #A0A0A0;\">%s</p>", $rules['tag']);
                         echo "<svg class='arrow-up'>";
                         echo file_get_contents("./fontawesome-free-5.9.0-web/svgs/solid/arrow-up.svg");
-                        printf("</svg><span class=\"votes\">%d</span>", $rules['likes']);
+                        printf("</svg><span class=\"votes\"> %d </span>", $rules['likes']);
                         echo "<svg class='arrow-down'>";
                         echo file_get_contents("./fontawesome-free-5.9.0-web/svgs/solid/arrow-down.svg");
-                        printf("</svg><span class=\"votes\">%d</span>", $rules['dislikes']);
+                        printf("</svg><span class=\"votes\"> %d</span>", $rules['dislikes']);
                         printf("</div>");
                         printf("</div>");
                         printf("</div>");

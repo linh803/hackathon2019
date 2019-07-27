@@ -1,3 +1,7 @@
+<?php
+    include 'navbar.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,25 +17,9 @@
     </head>
 
     <body id="bckgrd" background="./images/contribute-background.png">
-        <nav class="navbar navbar-expand-md justify-content-end">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="./index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Explore</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./contribute.php">Contribute</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Rate</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Sign In</a>
-                </li>
-            </ul>
-        </nav>
+        <?php
+            print_navbar();
+        ?>
 
         <div id="main" class="container">
             <!-- <div class="row"> -->
@@ -44,10 +32,10 @@
                         printf("<div class=\"col-sm-12 e-card\">");
                         printf("<div class=\"card custom-e-card\">");
                         printf("<div class=\"card-body\">");
-                        printf ("<p class=\"country\">%s</p>", $_POST['country']);
+                        printf ("<p style=\"color: #138EAD\">%s</p>", $_POST['country']);
                         printf ("<h2>%s</h2>", $_POST['title']);
                         printf ("<p class=\"description\">%s</p>", $_POST['description']);
-                        printf ("<p class=\"tags\">%s</p>", $_POST['tags']);
+                        printf ("<p style=\"color: #A0A0A0;\">%s</p>", $_POST['tags']);
                         printf("</div>");
                         printf("</div>");
                         printf("</div>");

@@ -40,3 +40,7 @@
 .arrow-down:hover path {
     fill: #ff0000;
 }
+
+#logo {
+    padding: 10px;
+}

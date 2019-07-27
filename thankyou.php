@@ -1,6 +1,7 @@
 <!-- Connect to database -->
 <?php
     include 'db.php';
+    include 'navbar.php';
     $conn = db_connect();
 
     // Get count for ID for new data
@@ -30,25 +31,9 @@
     </head>
 
     <body id="bckgrd" background="./images/contribute-background.png">
-        <nav class="navbar navbar-expand-md justify-content-end">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="./index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Explore</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./contribute.php">Contribute</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Rate</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Sign In</a>
-                </li>
-            </ul>
-        </nav>
+        <?php
+            print_navbar();
+        ?>
 
         <div id="main" class="container">
             <div class="col">

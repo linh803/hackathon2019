@@ -43,11 +43,12 @@
 
         <form action="./explore_results.php" method="post">
             <label for="search">SEARCH</label><br>
-            <input id="search" type="text" name="search" placeholder="Is it ok to..."><br>
+            <input id="search" type="text" name="title" placeholder="Is it ok to..."><br>
 
             <label for="location">LOCATION</label><br>
             <input list="location" name="country" placeholder="Country">
             <datalist id="location">
+                <!-- Get all countries from DB -->
                 <?php
                     $sql = 'SELECT * FROM location';
                     $result = mysqli_query($conn, $sql);
@@ -62,7 +63,7 @@
             <label for="tags">TAGS</label><br>
             <input id="tags" type="text" name="tags" placeholder="#work, #shop, ..."><br>
 
-            <input type="submit" value="Post">
+            <input type="submit" value="Search">
         </form>
     </body>
 </html>

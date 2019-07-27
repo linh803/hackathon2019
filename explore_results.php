@@ -43,7 +43,7 @@
 
         <form action="./explore_results.php" method="post">
             <label for="search">SEARCH</label><br>
-            <input id="search" type="text" name="search" placeholder="Is it ok to..."><br>
+            <input id="search" type="text" name="title" placeholder="Is it ok to..."><br>
 
             <label for="location">LOCATION</label><br>
             <input list="location" name='country' placeholder="Country">
@@ -61,12 +61,12 @@
 
             <label for="tags">TAGS</label><br>
             <input id="tags" type="text" name="tags" placeholder="#work, #shop, ..."><br>
-            <input type="submit" value="Post">
+            <input type="submit" value="Search">
         </form>
 
         <!-- Retrieve card results -->
         <?php
-            $sql = sprintf('SELECT * FROM etiquette NATURAL JOIN location WHERE title LIKE \'%%%s%%\' AND title LIKE \'%%%s%%\' AND country LIKE \'%%%s%%\'', $_POST['search'], $_POST['tags'], $_POST['country']);
+            $sql = sprintf('SELECT * FROM etiquette NATURAL JOIN location WHERE title LIKE \'%%%s%%\' AND title LIKE \'%%%s%%\' AND country LIKE \'%%%s%%\'', $_POST['title'], $_POST['tags'], $_POST['country']);
             $result = mysqli_query($conn, $sql);
 
             while($rules = mysqli_fetch_array($result)) {
